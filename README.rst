@@ -1,1 +1,1 @@
-ibm_db_sa/README.rst
+ibm_informix_sa/README.rst
