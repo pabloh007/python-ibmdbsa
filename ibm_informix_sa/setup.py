@@ -31,7 +31,7 @@ setup(
          long_description=open(readme).read(),
          platforms='All',
          install_requires=['sqlalchemy>=0.7.3'],
-         packages=['ibm_db_sa'],
+         packages=['ibm_informix_sa'],
         entry_points={
          'sqlalchemy.dialects': [
                      'db2=ibm_informix_sa.ibm_db:DB2Dialect_ibm_db',
