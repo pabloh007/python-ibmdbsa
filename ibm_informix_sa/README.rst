@@ -24,15 +24,15 @@ Please follow the steps provided to Install "Easy Install" in the link above and
   1. To install IBM_INFORMIX_SA egg component available in the remote repositories
   (pypi.python.org):
     Windows:
-      > easy_install ibm_db_sa
+      > easy_install ibm_informix_sa
     Linux/Unix:
-      $ sudo easy_install ibm_db_sa
+      $ sudo easy_install ibm_informix_sa
   
   2. To install IBM_INFORMIX_SA egg component from the downloaded .egg file
     Windows:
-      > easy_install ibm_db_sa-x.x.x-pyx.x.egg
+      > easy_install ibm_informix_sa-x.x.x-pyx.x.egg
     Linux/Unix:
-      $ sudo easy_install ibm_db_sa-x.x.x-pyx.x.egg
+      $ sudo easy_install ibm_informix_sa-x.x.x-pyx.x.egg
   
   3. To install IBM_INFORMIX_SA from source
     Standard Python setup should be used::
