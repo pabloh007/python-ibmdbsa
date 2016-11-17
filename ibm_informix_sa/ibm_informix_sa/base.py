@@ -638,9 +638,10 @@ class DB2IdentifierPreparer(compiler.IdentifierPreparer):
 
 class DB2ExecutionContext(default.DefaultExecutionContext):
     def fire_sequence(self, seq, type_):
-        return self._execute_scalar("SELECT NEXTVAL FOR " +
+        pass
+        """return self._execute_scalar("SELECT NEXTVAL FOR " +
                     self.dialect.identifier_preparer.format_sequence(seq) +
-                    " FROM SYSIBM.SYSDUMMY1", type_)
+                    " FROM SYSIBM.SYSDUMMY1", type_)"""
 
 class _SelectLastRowIDMixin(object):
     _select_lastrowid = False
@@ -661,6 +662,9 @@ class _SelectLastRowIDMixin(object):
                                         not self.compiled.inline
 
     def post_exec(self):
+        if self.isinsert:
+            self._lastrowid = self.cursor.sqlerrd[1]
+        """
         conn = self.root_connection
         if self._select_lastrowid:
             conn._cursor_execute(self.cursor,
@@ -668,7 +672,7 @@ class _SelectLastRowIDMixin(object):
                     (), self)
             row = self.cursor.fetchall()[0]
             if row[0] is not None:
-                self._lastrowid = int(row[0])
+                self._lastrowid = int(row[0])"""
 
 
 class DB2Dialect(default.DefaultDialect):
